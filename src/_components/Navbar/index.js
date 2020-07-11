@@ -4,6 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import Link from '@material-ui/core/Link';
 
 import Drawer from './Drawer';
 
@@ -17,10 +19,19 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  link: {
+    color: '#222',
+    textDecoration: 'none',
+  }
 }));
 
 export default function ButtonAppBar() {
   const classes = useStyles();
+
+  const preventDefault = (event) => {
+    // event.preventDefault()
+    console.log(event)
+  };
 
   return (
     <div className={classes.root}>
@@ -30,7 +41,14 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             News
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Link
+            className={classes.link}
+            href="https://github.com/aelhani"
+            onClick={preventDefault}
+          >
+            <Button color="inherit"><GitHubIcon style={{ fill: "white" }} /></Button>
+          </Link>
+
         </Toolbar>
       </AppBar>
     </div>
