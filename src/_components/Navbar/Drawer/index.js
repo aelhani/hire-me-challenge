@@ -8,6 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import Link from '@material-ui/core/Link';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -20,6 +21,10 @@ const useStyles = makeStyles({
     fullList: {
         width: 'auto',
     },
+    link: {
+        color: '#222',
+        textDecoration: 'none',
+    }
 });
 
 export default function AppDrawer() {
@@ -39,6 +44,11 @@ export default function AppDrawer() {
         setState({ ...state, [anchor]: open });
     };
 
+    const preventDefault = (event) => {
+        // event.preventDefault()
+        console.log(event)
+    };
+
     const list = (anchor) => (
         <div
             className={clsx(classes.list, {
@@ -49,21 +59,39 @@ export default function AppDrawer() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Home', 'Pokemon Types'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <HomeIcon /> : <AdbIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
+                <Link
+                    className={classes.link}
+                    href="/"
+                    onClick={preventDefault}
+                >
+                    <ListItem button key={'home'}>
+                        <ListItemIcon><HomeIcon /></ListItemIcon>
+                        <ListItemText primary={'Home'} />
                     </ListItem>
-                ))}
+                </Link>
+                <Link
+                    className={classes.link}
+                    href="types"
+                    onClick={preventDefault}
+                >
+                    <ListItem button key={'types'}>
+                        <ListItemIcon><AdbIcon /></ListItemIcon>
+                        <ListItemText primary={'Pokemon Types'} />
+                    </ListItem>
+                </Link>
             </List>
             <Divider />
             <List>
-                {['Github'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <GitHubIcon /> : <GitHubIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
+                <Link
+                    className={classes.link}
+                    href="https://github.com/aelhani"
+                    onClick={preventDefault}
+                >
+                    <ListItem button key={'github'}>
+                        <ListItemIcon><GitHubIcon /></ListItemIcon>
+                        <ListItemText primary={'Github'} />
                     </ListItem>
-                ))}
+                </Link>
             </List>
         </div>
     );
