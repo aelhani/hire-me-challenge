@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -25,12 +26,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function ButtonAppBar() {
+const Navbar = (props) => {
   const classes = useStyles();
 
   const preventDefault = (event) => {
     // event.preventDefault()
-    console.log(event)
+    // console.log(event)
   };
 
   return (
@@ -39,18 +40,20 @@ export default function ButtonAppBar() {
         <Toolbar>
           <Drawer />
           <Typography variant="h6" className={classes.title}>
-            News
+            HireMe Coding Challenge
           </Typography>
           <Link
             className={classes.link}
             href="https://github.com/aelhani"
             onClick={preventDefault}
+            target="_blank"
           >
             <Button color="inherit"><GitHubIcon style={{ fill: "white" }} /></Button>
           </Link>
-
         </Toolbar>
       </AppBar>
     </div>
   );
 }
+
+export default Navbar;

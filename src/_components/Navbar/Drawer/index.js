@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     }
 });
 
-export default function AppDrawer() {
+const AppDrawer = () => {
     const classes = useStyles();
     const [state, setState] = React.useState({
         top: false,
@@ -46,7 +46,7 @@ export default function AppDrawer() {
 
     const preventDefault = (event) => {
         // event.preventDefault()
-        console.log(event)
+        // console.log(event)
     };
 
     const list = (anchor) => (
@@ -86,6 +86,7 @@ export default function AppDrawer() {
                     className={classes.link}
                     href="https://github.com/aelhani"
                     onClick={preventDefault}
+                    target="_blank"
                 >
                     <ListItem button key={'github'}>
                         <ListItemIcon><GitHubIcon /></ListItemIcon>
@@ -111,3 +112,5 @@ export default function AppDrawer() {
         </div>
     );
 }
+
+export default AppDrawer;
