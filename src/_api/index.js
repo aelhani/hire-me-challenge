@@ -19,3 +19,13 @@ export async function loadPokeItemRequest(id) {
             return error.response.data
         })
 }
+
+export async function loadTypeListRequest(id) {
+    return await request.get(`/type`)
+        .then(res => {
+            return res
+        })
+        .catch(error => {
+            return error.response.data
+        })
+}
