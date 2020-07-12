@@ -13,9 +13,9 @@ const App = () => {
     <div className="App" title="app-container" >
       <Navbar />
       <Router>
-          <Route exact path="/" render={() => <Home />} />
-          <Route exact path="/types" render={() => <Types />} />
-          <Route exact path="/pokemon" render={() => <Pokemon />} />
+        <Route exact path="/" render={() => <Home />} />
+        <Route exact path="/types" render={() => <Types />} />
+        <Route path="/pokemon" render={() => <Pokemon />} />
       </Router>
     </div>
   );
