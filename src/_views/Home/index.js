@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography';
-import { loadPokemons } from '../../_actions'
+import { loadPokeList } from '../../_actions'
 
 import PokeList from '../../_components/PokeList';
 
@@ -35,7 +35,7 @@ const Home = (props) => {
     const [page, setPage] = useState(0);
 
     useEffect(() => {
-        props.loadPokemons(20, page)
+        props.loadPokeList(20, page)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page]);
 
@@ -67,16 +67,16 @@ const Home = (props) => {
                     {">"}
                 </Button>
             </div>
-            {props.pokemons !== null && <PokeList list={props.pokemons.results} />}
+            {props.pokeList !== null && <PokeList list={props.pokeList.results} />}
         </div>
     )
 };
 
 const mapState = (state) => {
     return {
-        pokemons: state.pokemonsReducer.data,
-        message: state.pokemonsReducer.message,
+        pokeList: state.pokeListReducer.data,
+        message: state.pokeListReducer.message,
     }
 }
 
-export default connect(mapState, { loadPokemons })(Home)
+export default connect(mapState, { loadPokeList })(Home)
