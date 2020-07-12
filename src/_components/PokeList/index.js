@@ -23,6 +23,7 @@ const PokeList = ({ list }) => {
             {list !== undefined && list.map((pokemon, i) => {
                 return (
                     <React.Fragment key={`${i}-${pokemon.name}`} >
+                        <Divider />
                         <Link
                             href={`/pokemon/${i + 1}`}
                             className={classes.link}
@@ -34,7 +35,6 @@ const PokeList = ({ list }) => {
                                 <ListItemText primary={pokemon.name} />
                             </ListItem>
                         </Link>
-                        <Divider />
                     </React.Fragment>
                 )
             })}
