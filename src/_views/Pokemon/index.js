@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { loadPokeItem } from '../../_actions'
 
-const Pokemon = () => {
+const PokeItem = (props) => {
+
+    const loadItem = () => {
+        let href = window.location.href
+        let n = href.lastIndexOf("/")
+        let id = href.substring(n + 1)
+        if (!isNaN(id) && id > 0)
+            props.loadPokeItem(id)
+    }
+
+    useEffect(() => {
+        loadItem();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    console.log(props.pokeItem)
+
     return (
         <div>
-            Pokemon
+            {props.pokeItem !== null && `PokeItem #${props.pokeItem.id}`}
         </div>
     )
 };
 
-export default Pokemon;
+const mapState = (state) => {
+    return {
+        pokeItem: state.pokeItemReducer.data,
+        message: state.pokeItemReducer.message,
+    }
+}
+
+export default connect(mapState, { loadPokeItem })(PokeItem)
