@@ -9,12 +9,12 @@ const pokemonsReducer = (state = initialState, action) => {
     const newState = { ...state }
 
     switch (action.type) {
-        case types.LOAD_POKEMONS_SUCCESS: {
+        case types.LOAD_POKELIST_SUCCESS: {
             newState.data = action.payload
             newState.message = 'Loading Succesful'
             return newState
         }
-        case types.LOAD_POKEMONS_FAILURE: {
+        case types.LOAD_POKELIST_FAILURE: {
             newState.data = null
             newState.message = 'Unknown Error'
             return newState
