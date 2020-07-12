@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { loadPokeItem } from '../../_actions'
+
+import PokeCard from '../../_components/PokeCard';
+
+import { loadPokeItem } from '../../_actions';
 
 const PokeItem = (props) => {
 
@@ -17,11 +20,16 @@ const PokeItem = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    console.log(props.pokeItem)
-
     return (
         <div>
-            {props.pokeItem !== null && `PokeItem #${props.pokeItem.id}`}
+            {props.pokeItem !== null && (
+            <PokeCard 
+                name={props.pokeItem.name}
+                image={props.pokeItem.sprites.front_default}
+                abilities={props.pokeItem.abilities}
+                types={props.pokeItem.types}
+            />
+            )}
         </div>
     )
 };
