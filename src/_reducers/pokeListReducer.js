@@ -5,7 +5,7 @@ const initialState = {
     message: ''
 }
 
-const pokemonsReducer = (state = initialState, action) => {
+const pokeListReducer = (state = initialState, action) => {
     const newState = { ...state }
 
     switch (action.type) {
@@ -25,4 +25,4 @@ const pokemonsReducer = (state = initialState, action) => {
     }
 }
 
-export default pokemonsReducer
+export default pokeListReducer
