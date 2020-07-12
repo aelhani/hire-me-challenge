@@ -1,3 +1,4 @@
-import { loadPokemons } from './pokemonsActions';
+import { loadPokeList } from './pokeListActions';
+import { loadPokeItem } from './pokeItemActions';
 
-export { loadPokemons }
+export { loadPokeList, loadPokeItem }
