@@ -71,7 +71,7 @@ const AppDrawer = () => {
                 </Link>
                 <Link
                     className={classes.link}
-                    href="types"
+                    href="/types"
                     onClick={preventDefault}
                 >
                     <ListItem button key={'types'}>
