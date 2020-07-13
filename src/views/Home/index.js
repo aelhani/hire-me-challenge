@@ -62,7 +62,7 @@ const Home = (props) => {
 
     function lockNext() {
         let len = 0
-        if (props.pokeList !== null )
+        if (props.pokeList !== null)
             len = props.pokeList.length
         return (page + 1) * 20 >= len
     }
