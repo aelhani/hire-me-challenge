@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     }
 });
 
-const PokeList = ({ list, byType }) => {
+const PokeList = ({ list, byType, page }) => {
     const classes = useStyles();
 
     function getId(text) {
@@ -28,7 +28,11 @@ const PokeList = ({ list, byType }) => {
 
     const getList = () => {
         if (byType) {
-            let formatList = list.map(item => { return item.pokemon })
+            let formatList = []
+            list.forEach((item, i) => {
+                if (i >= page * 20 && i < (page + 1) * 20)
+                    formatList.push(item.pokemon)
+            })
             return formatList
         }
         return list.results

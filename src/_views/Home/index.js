@@ -82,7 +82,7 @@ const Home = (props) => {
                     {">"}
                 </Button>
             </div>
-            {props.pokeList !== null && <PokeList byType={byType} list={props.pokeList} />}
+            {props.pokeList !== null && <PokeList page={page} byType={byType} list={props.pokeList} />}
         </div>
     )
 };

@@ -24,6 +24,14 @@ const useStyles = makeStyles({
 const PokeCard = ({ name, image, abilities, types }) => {
     const classes = useStyles();
 
+    function getId(text) {
+        let l = text.length
+        let tmp = text.substring(0, l - 1)
+        let n = tmp.lastIndexOf("/")
+        let id = tmp.substring(n + 1)
+        return id
+    }
+
     return (
         <Card className={classes.root}>
             <CardActionArea>
@@ -50,7 +58,7 @@ const PokeCard = ({ name, image, abilities, types }) => {
             <CardActions>
                 {types.map(t => {
                     return (
-                        <Link key={t.type.name} href="#" >
+                        <Link key={t.type.name} href={`/?type=${getId(t.type.url)}`} >
                             <Button size="small" color="primary" >
                                 {t.type.name}
                             </Button>
