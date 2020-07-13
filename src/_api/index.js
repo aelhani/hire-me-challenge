@@ -20,8 +20,18 @@ export async function loadPokeItemRequest(id) {
         })
 }
 
-export async function loadTypeListRequest(id) {
+export async function loadTypeListRequest() {
     return await request.get(`/type`)
+        .then(res => {
+            return res
+        })
+        .catch(error => {
+            return error.response.data
+        })
+}
+
+export async function loadPokeListByTypeRequest(id) {
+    return await request.get(`/type/${id}`)
         .then(res => {
             return res
         })
