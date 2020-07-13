@@ -33,7 +33,7 @@ const TypeList = ({ list }) => {
                     <React.Fragment key={`${i}-${type.name}`} >
                         <Divider />
                         <Link
-                            href={`/type/${getId(type.url)}`}
+                            href={`/?type=${getId(type.url)}`}
                             className={classes.link}
                         >
                             <ListItem button >
