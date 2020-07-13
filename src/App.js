@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Navbar from './_components/Navbar';
+import Navbar from './components/Navbar';
 
-import Home from './_views/Home';
-import Types from './_views/Types';
-import PokeItem from './_views/PokeItem';
+import Home from './views/Home';
+import Types from './views/Types';
+import PokeItem from './views/PokeItem';
 
 const App = () => {
   return (

@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { loadTypeList } from '../../_actions'
 
-import TypeList from '../../_components/TypeList';
+import TypeList from '../../components/TypeList';
 
 const useStyles = makeStyles((theme) => ({
     root: {

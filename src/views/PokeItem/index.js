@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import PokeCard from '../../_components/PokeCard';
+import PokeCard from '../../components/PokeCard';
 
 import { loadPokeItem } from '../../_actions';
 
