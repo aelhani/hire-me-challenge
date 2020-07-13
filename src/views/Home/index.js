@@ -60,6 +60,13 @@ const Home = (props) => {
         }
     }
 
+    function lockNext() {
+        let len = 0
+        if (props.pokeList !== null )
+            len = props.pokeList.length
+        return (page + 1) * 20 >= len
+    }
+
     return (
         <div className={classes.root}>
             <div className={classes.controls}>
@@ -78,6 +85,7 @@ const Home = (props) => {
                     color="primary"
                     variant="contained"
                     onClick={() => loadPage(1)}
+                    disabled={lockNext() && byType}
                 >
                     {">"}
                 </Button>
