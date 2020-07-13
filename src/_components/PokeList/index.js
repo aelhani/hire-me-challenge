@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     }
 });
 
-const PokeList = ({ list }) => {
+const PokeList = ({ list, byType }) => {
     const classes = useStyles();
 
     function getId(text) {
@@ -26,9 +26,17 @@ const PokeList = ({ list }) => {
         return id
     }
 
+    const getList = () => {
+        if (byType) {
+            let formatList = list.map(item => { return item.pokemon })
+            return formatList
+        }
+        return list.results
+    }
+
     return (
         <List component="nav" >
-            {list !== undefined && list.map((pokemon, i) => {
+            {list !== undefined && getList().map((pokemon, i) => {
                 return (
                     <React.Fragment key={`${i}-${pokemon.name}`} >
                         <Divider />
