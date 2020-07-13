@@ -18,6 +18,14 @@ const useStyles = makeStyles({
 const PokeList = ({ list }) => {
     const classes = useStyles();
 
+    function getId(text) {
+        let l = text.length
+        let tmp = text.substring(0, l - 1)
+        let n = tmp.lastIndexOf("/")
+        let id = tmp.substring(n + 1)
+        return id
+    }
+
     return (
         <List component="nav" >
             {list !== undefined && list.map((pokemon, i) => {
@@ -25,7 +33,7 @@ const PokeList = ({ list }) => {
                     <React.Fragment key={`${i}-${pokemon.name}`} >
                         <Divider />
                         <Link
-                            href={`/pokemon/${i + 1}`}
+                            href={`/pokemon/${getId(pokemon.url)}`}
                             className={classes.link}
                         >
                             <ListItem button >
