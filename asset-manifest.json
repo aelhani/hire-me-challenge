@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/hire-me-challenge/static/css/main.5dc1c6f9.chunk.css",
+    "main.js": "/hire-me-challenge/static/js/main.7ae38885.chunk.js",
+    "main.js.map": "/hire-me-challenge/static/js/main.7ae38885.chunk.js.map",
+    "runtime-main.js": "/hire-me-challenge/static/js/runtime-main.2b87ede9.js",
+    "runtime-main.js.map": "/hire-me-challenge/static/js/runtime-main.2b87ede9.js.map",
+    "static/js/2.9d3c347e.chunk.js": "/hire-me-challenge/static/js/2.9d3c347e.chunk.js",
+    "static/js/2.9d3c347e.chunk.js.map": "/hire-me-challenge/static/js/2.9d3c347e.chunk.js.map",
+    "index.html": "/hire-me-challenge/index.html",
+    "precache-manifest.aa6e41cd6931e1acf95f6c86bd246cd8.js": "/hire-me-challenge/precache-manifest.aa6e41cd6931e1acf95f6c86bd246cd8.js",
+    "service-worker.js": "/hire-me-challenge/service-worker.js",
+    "static/css/main.5dc1c6f9.chunk.css.map": "/hire-me-challenge/static/css/main.5dc1c6f9.chunk.css.map",
+    "static/js/2.9d3c347e.chunk.js.LICENSE.txt": "/hire-me-challenge/static/js/2.9d3c347e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2b87ede9.js",
+    "static/js/2.9d3c347e.chunk.js",
+    "static/css/main.5dc1c6f9.chunk.css",
+    "static/js/main.7ae38885.chunk.js"
+  ]
+}
